@@ -1,0 +1,133 @@
+/* Grid */
+
+#grid {
+	.article {
+		-webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		background-image: url("../../images/thumbnail.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: inline-block;
+		width: 440px;
+		height: 330px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		position: relative;
+	}
+
+	.article:hover {
+	  background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 194, 155, 0.70), 
+      rgba(0, 194, 155, 0.70)
+    ),
+    /* bottom, image */
+    url("../../images/thumbnail.png");
+    background-size: cover;
+    -webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	}
+
+	.article-expanded {
+		-webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		width: 100%;
+		height: 500px;
+
+		> img {
+			width: 50%;
+			float: left;
+			max-height: 360px;
+			padding-left: 40px;
+		}
+
+		> .article-content-wrapper {
+			width: 50%;
+			float: right;
+			padding: 0 40px;
+			height: 360px;
+			position: relative;
+
+			> button {
+				position: absolute;
+				bottom: 0px;
+				right: 40px;
+			}
+
+			a {
+				float: right;
+			}
+
+			p {
+				clear: both;
+				padding-top: 20px;
+			}
+		}
+
+		> .article-header {
+
+			background: _palette(main,bg);
+		    margin-bottom: 40px;
+
+		    ul {
+				display: inline;
+				float: right;
+				margin-top: 15px;
+				margin-right: 20px;
+		    }
+
+		    .icon {
+				display: inline-block;
+				width: 2em;
+				height: 1.98em;
+				background-repeat: no-repeat;
+				background-size: cover;
+		    }
+
+			#report {
+				background-image: url("../../images/report-white.png");
+			}
+
+			#report:hover {
+				background-image: url("../../images/report-green.png");
+				-webkit-transition: background-image 0.2s ease-in-out;
+				transition: background-image 0.2s ease-in-out;
+			}
+
+			#close {
+				background-image: url("../../images/close-light.png");
+				background-repeat: no-repeat;
+				position: relative;
+				top: 15px;
+    			left: 15px;	
+			}
+
+			.icon-wrapper {
+			    background-color: _palette(accent1,bg);
+			    height: 60px;
+			    width: 60px;
+			    float: right;
+			}
+
+			.icon-wrapper:hover {
+				background-color: darken(_palette(accent1, bg), 12);
+				-webkit-transition: background-color 0.2s ease-in-out;
+				transition: background-color 0.2s ease-in-out;
+			}
+
+			h1 {
+				color: white;
+				text-transform: uppercase;
+				font-size: 40px;
+				font-family: Open Sans, sans-serif;
+				font-weight: lighter;
+				padding: 10px 20px;
+				margin-bottom: 0;
+				display: inline;
+			}
+		}
+	}
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<!-- skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed -->
+<html>
+	<head>
+		<title>Baseline</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="/" class="logo-wrapper" href="#"><img id="logo" class="logo" src="images/logo.png"></a>
+				<a href="#" id="about-link" onmouseover="HoverIcon(this.id)" onmouseout="Icon(this.id)" class="nav-wrapper"><div id="about-icon" class="about icon"></div><span id="about-label" class="nav-label">ABOUT</span></a></li>
+				<div id="search-wrapper" onclick="ActivateHeader()" >
+					<div id="search-icon" class="search icon" onMouseOver="this.style.cursor='pointer'"></div>
+					<form id="search-field">
+						<input class="line-form-field" type="search" name="googlesearch">
+					</form>
+
+				</div>
+			</header>
+			<script type="text/javascript">
+				//we need to smartly scale the below to work with any nav item, currently we only have about so it's fine. Also there is a glitch on the timing on hover effect on nav elements
+				function HoverIcon()
+				{			
+					document.getElementById("about-icon").className = "about-hover icon";
+					document.getElementById("about-label").className = "nav-item-hover nav-label";
+				}
+
+				function Icon()
+				{					
+					document.getElementById("about-icon").className = "about icon";
+					document.getElementById("about-label").className = "nav-item nav-label";
+				}
+
+				function ActivateHeader()
+				{
+					// expandable search animation needs to be eased out
+					document.getElementById("header").className = "header-active";
+					document.getElementById("logo").src="images/Logo-light.png";
+					document.getElementById("about-icon").className = "about-light icon";
+					document.getElementById("about-label").className = "nav-item-light nav-label";
+					document.getElementById("search-field").className = "appear";
+					document.getElementById("about-link").onmouseout = function() {
+						document.getElementById("about-icon").className = "about-light icon";
+						document.getElementById("about-label").className = "nav-item-light nav-label";
+					};
+				}
+
+			</script><!-- //calismiyo! -->
+		<!-- Nav -->
+<!-- 			<nav id="nav">
+				<ul class="links">
+					<li><a href="#about"><img src="images/about.png"><span>ABOUT</span></a></li>
+				</ul>
+			</nav> -->
+
+		<!-- Main -->
+			<div id="main" class="container">
+				<div id="grid">
+					<div class="article" onMouseOver="this.style.cursor='pointer'">
+						<h2 class="large-title">Article Title</h2>
+					</div>
+					<div class="article-expanded">
+						<div class="article-header">
+							<h1>Article Title</h1>
+							<div class="icon-wrapper"><span class="icon" id="close"></span></div>
+							<ul>
+								<li class="icon" id="report"></li>
+							</ul>
+						</div>
+						<img src="images/thumbnail.png">
+						<div class="article-content-wrapper">
+							<a class="creator" href="">Creator Name : Jackson Pollock</a>
+							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.</p>
+							<button class="primary-btn">GO TO PROJECT SITE</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

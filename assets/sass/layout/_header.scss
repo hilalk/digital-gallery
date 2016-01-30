@@ -1,0 +1,198 @@
+// skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed
+
+/* Header */
+
+	body {
+		padding-top: 3.125em;
+	}
+
+	.header-active {
+		background: _palette(main, bg) !important;
+		-webkit-transition: background 0.2s ease-in-out;
+		transition: background 0.2s ease-in-out;
+	}
+
+	#header {
+		background: lighten(_palette(light, bg), 12);
+		-webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		color: _palette(main, bg);
+		cursor: default;
+		height: 7em;
+		left: 0;
+		line-height: 3.25em;
+		position: fixed;
+		text-align: right;
+		top: 0;
+		width: 100%;
+		z-index: _misc(z-index-base) + 1;
+
+		> .logo-wrapper {
+			display: inline-block;
+			left: 2.5em;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 1.000em;
+
+			a {
+				font-size: 1.25em;
+			}
+		}
+
+		> .nav-wrapper {
+		    display: inline-block;
+		    left: 15em;
+		    margin: 0;
+		    padding: 0;
+		    position: absolute;
+		    top: 2.44em;
+		}
+
+		/*> .nav-wrapper:hover {
+			color: _palette(accent1, bg);
+		}*/
+
+		.nav-label {
+		    position: relative;
+			bottom: 0.438em;
+			font-size: 1.250em;
+			margin-left: 0.625em;
+		}
+
+		.logo {
+			width: 10em;
+		}
+
+		.search {
+			background-image: url("../../images/search.png");
+		    margin-top: 2.44em;
+			margin-right: 2.5em;
+		}
+
+		.about {
+			background-image: url("../../images/about.png");
+			-webkit-transition: background-image 0.2s ease-in-out;
+			transition: background-image 0.2s ease-in-out;
+		}
+
+		.about-hover {
+			background-image: url("../../images/about-hover.png");
+			-webkit-transition: background-image 0.2s ease-in-out;
+			transition: background-image 0.2s ease-in-out;
+		}
+
+		.about-light {
+			background-image: url("../../images/about-light.png");
+			-webkit-transition: background-image 0.2s ease-in-out;
+			transition: background-image 0.2s ease-in-out;
+		}
+
+		.icon {
+			display: inline-block;
+			width: 2em;
+			height: 1.98em;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		#search-field {
+			display:none;
+		}
+
+		.appear {
+			display: inline-block !important;
+		}
+
+		.nav-item {
+			color: _palette(main, bg);
+			-webkit-transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
+		}
+
+		.nav-item-hover {
+			color: _palette(accent1, bg);
+			-webkit-transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
+		}
+
+	    .nav-item-light {
+			color: _palette(light, bg);
+			-webkit-transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
+		}
+
+		> a {
+			@include vendor('transition', 'color #{_duration(transition)} ease-in-out');
+			display: inline-block;
+			padding: 0 0.75em;
+			color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				color: _palette(accent2, fg-bold);
+			}
+
+			&[href="#nav"] {
+				@include icon('\f0c9');
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+				&:before {
+					margin: 0 0.5em 0 0;
+				}
+			}
+
+			& + a[href="#nav"]:last-child {
+				border-left: solid 1px _palette(accent2, border);
+				padding-left: 1.25em;
+				margin-left: 0.5em;
+			}
+
+			&:last-child {
+				padding-right: 1.25em;
+			}
+
+			@include breakpoint(small) {
+				padding: 0 0.5em;
+
+				& + a[href="#nav"]:last-child {
+					padding-left: 1em;
+					margin-left: 0.25em;
+				}
+
+				&:last-child {
+					padding-right: 1em;
+				}
+			}
+		}
+
+	}
+
+	@include breakpoint(medium) {
+		body {
+			padding-top: 44px;
+		}
+
+		#header {
+			height: 7em;
+
+			> h1 {
+				left: 1em;
+
+				a {
+					font-size: 1em;
+				}
+			}
+		}
+	}
+
+	@include breakpoint(xsmall) {
+		#header {
+			min-width: 320px;
+		}
+
+		.nav-label {
+		   display: none;
+		}
+	}
