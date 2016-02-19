@@ -1897,6 +1897,20 @@ body {
   background: #223F50 !important;
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out; }
+  .header-active > .logo-wrapper .logo-default {
+    background-image: url("../../images/Logo-light.png") !important; }
+  .header-active .nav-wrapper {
+    color: white !important; }
+  .header-active .nav-wrapper:hover {
+    color: #FF2964 !important;
+    -webkit-transition: all 0.2s ease-in-out !important;
+    transition: all 0.2s ease-in-out !important; }
+  .header-active #about-link {
+    background-image: url("../../images/about-light.png") !important; }
+  .header-active #about-link:hover {
+    background-image: url("../../images/about-hover.png") !important; }
+  .header-active #search-field {
+    display: inline-block !important; }
 
 #header {
   background: white;
@@ -1912,10 +1926,7 @@ body {
   text-align: right;
   top: 0;
   width: 100%;
-  z-index: 10001;
-  /*> .nav-wrapper:hover {
-  	color: _palette(accent1, bg);
-  }*/ }
+  z-index: 10001; }
   #header > .logo-wrapper {
     display: inline-block;
     left: 2.5em;
@@ -1925,36 +1936,39 @@ body {
     top: 1.000em; }
     #header > .logo-wrapper a {
       font-size: 1.25em; }
-  #header > .nav-wrapper {
+    #header > .logo-wrapper .logo {
+      display: inline-block;
+      height: 400px;
+      width: 310px;
+      background-repeat: no-repeat;
+      background-size: 50%; }
+    #header > .logo-wrapper .logo-default {
+      background-image: url("../../images/Logo.png"); }
+  #header .nav-wrapper {
     display: inline-block;
-    left: 15em;
+    left: 13em;
     margin: 0;
-    padding: 0;
+    padding-left: 50px;
     position: absolute;
-    top: 2.44em; }
-  #header .nav-label {
-    position: relative;
-    bottom: 0.438em;
+    top: 1.44em;
     font-size: 1.250em;
-    margin-left: 0.625em; }
+    background-position: 0px 5px;
+    background-repeat: no-repeat;
+    background-size: 2em; }
+  #header .nav-wrapper:hover {
+    color: #FF2964;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
   #header .logo {
     width: 10em; }
   #header .search {
     background-image: url("../../images/search.png");
     margin-top: 2.44em;
     margin-right: 2.5em; }
-  #header .about {
-    background-image: url("../../images/about.png");
-    -webkit-transition: background-image 0.2s ease-in-out;
-    transition: background-image 0.2s ease-in-out; }
-  #header .about-hover {
-    background-image: url("../../images/about-hover.png");
-    -webkit-transition: background-image 0.2s ease-in-out;
-    transition: background-image 0.2s ease-in-out; }
-  #header .about-light {
-    background-image: url("../../images/about-light.png");
-    -webkit-transition: background-image 0.2s ease-in-out;
-    transition: background-image 0.2s ease-in-out; }
+  #header #about-link {
+    background-image: url("../../images/about.png"); }
+  #header #about-link:hover {
+    background-image: url("../../images/about-hover.png"); }
   #header .icon {
     display: inline-block;
     width: 2em;
@@ -1963,20 +1977,6 @@ body {
     background-size: cover; }
   #header #search-field {
     display: none; }
-  #header .appear {
-    display: inline-block !important; }
-  #header .nav-item {
-    color: #223F50;
-    -webkit-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out; }
-  #header .nav-item-hover {
-    color: #00C29B;
-    -webkit-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out; }
-  #header .nav-item-light {
-    color: #ffffff;
-    -webkit-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out; }
   #header > a {
     -moz-transition: color 0.2s ease-in-out;
     -webkit-transition: color 0.2s ease-in-out;
@@ -2028,10 +2028,7 @@ body {
         font-size: 1em; } }
 @media screen and (max-width: 480px) {
   #header {
-    min-width: 320px; }
-
-  .nav-label {
-    display: none; } }
+    min-width: 320px; } }
 /* Nav */
 #nav {
   -moz-transform: translateX(20em);
@@ -2234,7 +2231,8 @@ body {
   margin-bottom: 20px;
   position: relative; }
 #grid .article:hover {
-  background: linear-gradient(rgba(0, 194, 155, 0.7), rgba(0, 194, 155, 0.7)), url("../../images/thumbnail.png");
+  cursor: pointer;
+  background: linear-gradient(rgba(255, 41, 100, 0.7), rgba(255, 41, 100, 0.7)), url("../../images/thumbnail.png");
   background-size: cover;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
@@ -2281,7 +2279,7 @@ body {
     #grid .article-expanded > .article-header #report {
       background-image: url("../../images/report-white.png"); }
     #grid .article-expanded > .article-header #report:hover {
-      background-image: url("../../images/report-green.png");
+      background-image: url("../../images/report-active.png");
       -webkit-transition: background-image 0.2s ease-in-out;
       transition: background-image 0.2s ease-in-out; }
     #grid .article-expanded > .article-header #close {

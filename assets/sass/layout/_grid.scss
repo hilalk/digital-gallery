@@ -17,11 +17,12 @@
 	}
 
 	.article:hover {
+	  cursor: pointer;
 	  background: 
     /* top, transparent red, faked with gradient */ 
     linear-gradient(
-      rgba(0, 194, 155, 0.70), 
-      rgba(0, 194, 155, 0.70)
+      rgba(255, 41, 100, 0.70), 
+      rgba(255, 41, 100, 0.70)
     ),
     /* bottom, image */
     url("../../images/thumbnail.png");
@@ -92,7 +93,7 @@
 			}
 
 			#report:hover {
-				background-image: url("../../images/report-green.png");
+				background-image: url("../../images/report-active.png");
 				-webkit-transition: background-image 0.2s ease-in-out;
 				transition: background-image 0.2s ease-in-out;
 			}

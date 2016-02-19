@@ -8,8 +8,37 @@
 
 	.header-active {
 		background: _palette(main, bg) !important;
-		-webkit-transition: background 0.2s ease-in-out;
+		-webkit-transition:	 background 0.2s ease-in-out;
 		transition: background 0.2s ease-in-out;
+		> .logo-wrapper {
+		  	.logo-default {
+				background-image: url("../../images/Logo-light.png") !important;
+			}
+		}
+
+		.nav-wrapper {
+			color: white !important;
+		}
+
+		.nav-wrapper:hover {
+			color: _palette(accent2,bg) !important;
+			-webkit-transition: all 0.2s ease-in-out !important;
+			transition: all 0.2s ease-in-out !important;
+		}
+
+		#about-link {
+			background-image: url("../../images/about-light.png") !important;
+		}
+
+
+		#about-link:hover {
+			background-image: url("../../images/about-hover.png") !important;
+		}
+
+		#search-field {
+			display: inline-block !important;
+		}
+
 	}
 
 	#header {
@@ -39,26 +68,37 @@
 			a {
 				font-size: 1.25em;
 			}
+
+			.logo {
+				display: inline-block;
+				height: 400px;
+				width: 310px;
+				background-repeat: no-repeat;
+				background-size: 50%;
+			}
+
+			.logo-default {
+				background-image: url("../../images/Logo.png");
+			}
 		}
 
-		> .nav-wrapper {
+		.nav-wrapper {
 		    display: inline-block;
-		    left: 15em;
+		    left: 13em;
 		    margin: 0;
-		    padding: 0;
+		    padding-left: 50px;
 		    position: absolute;
-		    top: 2.44em;
+		    top: 1.44em;
+		    font-size: 1.250em;
+		    background-position: 0px 5px;
+		    background-repeat: no-repeat;
+			background-size: 2em;
 		}
 
-		/*> .nav-wrapper:hover {
-			color: _palette(accent1, bg);
-		}*/
-
-		.nav-label {
-		    position: relative;
-			bottom: 0.438em;
-			font-size: 1.250em;
-			margin-left: 0.625em;
+		.nav-wrapper:hover {
+			color: _palette(accent2,bg);
+			-webkit-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
 		}
 
 		.logo {
@@ -70,23 +110,13 @@
 		    margin-top: 2.44em;
 			margin-right: 2.5em;
 		}
-
-		.about {
+		
+		#about-link {
 			background-image: url("../../images/about.png");
-			-webkit-transition: background-image 0.2s ease-in-out;
-			transition: background-image 0.2s ease-in-out;
 		}
 
-		.about-hover {
+		#about-link:hover {
 			background-image: url("../../images/about-hover.png");
-			-webkit-transition: background-image 0.2s ease-in-out;
-			transition: background-image 0.2s ease-in-out;
-		}
-
-		.about-light {
-			background-image: url("../../images/about-light.png");
-			-webkit-transition: background-image 0.2s ease-in-out;
-			transition: background-image 0.2s ease-in-out;
 		}
 
 		.icon {
@@ -101,27 +131,6 @@
 			display:none;
 		}
 
-		.appear {
-			display: inline-block !important;
-		}
-
-		.nav-item {
-			color: _palette(main, bg);
-			-webkit-transition: color 0.2s ease-in-out;
-			transition: color 0.2s ease-in-out;
-		}
-
-		.nav-item-hover {
-			color: _palette(accent1, bg);
-			-webkit-transition: color 0.2s ease-in-out;
-			transition: color 0.2s ease-in-out;
-		}
-
-	    .nav-item-light {
-			color: _palette(light, bg);
-			-webkit-transition: color 0.2s ease-in-out;
-			transition: color 0.2s ease-in-out;
-		}
 
 		> a {
 			@include vendor('transition', 'color #{_duration(transition)} ease-in-out');
@@ -192,7 +201,7 @@
 			min-width: 320px;
 		}
 
-		.nav-label {
-		   display: none;
-		}
+		// .nav-wrapper {
+		//    color: transparent !important;
+		// }
 	}

@@ -11,43 +11,20 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="/" class="logo-wrapper" href="#"><img id="logo" class="logo" src="images/logo.png"></a>
-				<a href="#" id="about-link" onmouseover="HoverIcon(this.id)" onmouseout="Icon(this.id)" class="nav-wrapper"><div id="about-icon" class="about icon"></div><span id="about-label" class="nav-label">ABOUT</span></a></li>
-				<div id="search-wrapper" onclick="ActivateHeader()" >
-					<div id="search-icon" class="search icon" onMouseOver="this.style.cursor='pointer'"></div>
+				<a href="/" class="logo-wrapper" href="#"><div id="logo" class="logo logo-default"></div></a>
+								<a href="#" id="about-link" class="nav-wrapper">ABOUT</a>
+<!-- 				<a href="#" id="about-link" class="nav-wrapper"><span id="about-label" class="nav-label">ABOUT</span></a></li> -->
+				<div id="search-wrapper">
+					<div id="search-icon" class="search icon"></div>
 					<form id="search-field">
 						<input class="line-form-field" type="search" name="googlesearch">
 					</form>
-
 				</div>
 			</header>
 			<script type="text/javascript">
+
 				//we need to smartly scale the below to work with any nav item, currently we only have about so it's fine. Also there is a glitch on the timing on hover effect on nav elements
-				function HoverIcon()
-				{			
-					document.getElementById("about-icon").className = "about-hover icon";
-					document.getElementById("about-label").className = "nav-item-hover nav-label";
-				}
 
-				function Icon()
-				{					
-					document.getElementById("about-icon").className = "about icon";
-					document.getElementById("about-label").className = "nav-item nav-label";
-				}
-
-				function ActivateHeader()
-				{
-					// expandable search animation needs to be eased out
-					document.getElementById("header").className = "header-active";
-					document.getElementById("logo").src="images/Logo-light.png";
-					document.getElementById("about-icon").className = "about-light icon";
-					document.getElementById("about-label").className = "nav-item-light nav-label";
-					document.getElementById("search-field").className = "appear";
-					document.getElementById("about-link").onmouseout = function() {
-						document.getElementById("about-icon").className = "about-light icon";
-						document.getElementById("about-label").className = "nav-item-light nav-label";
-					};
-				}
 
 			</script><!-- //calismiyo! -->
 		<!-- Nav -->
@@ -60,7 +37,7 @@
 		<!-- Main -->
 			<div id="main" class="container">
 				<div id="grid">
-					<div class="article" onMouseOver="this.style.cursor='pointer'">
+					<div class="article">
 						<h2 class="large-title">Article Title</h2>
 					</div>
 					<div class="article-expanded">
@@ -84,6 +61,26 @@
 		<!-- Scripts -->
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/min/jquery-1.12.0.min.js"></script>
+			<script type="text/javascript">
 
+			$( document ).ready(function() {
+				// $("body").css("background-color", "yellow");
+				$('#search-icon').css('cursor','pointer');
+				function ActivateHeader()
+				{
+					$("#header").toggleClass("header-active");	
+				}
+
+				$("#search-icon").click(function() {
+						console.log('click');
+						ActivateHeader();
+
+				});
+				// $( "#header" ).click(function() {
+				// 	alert( "Handler for .click() called." );
+				// });
+			});
+			</script>
 	</body>
 </html>
