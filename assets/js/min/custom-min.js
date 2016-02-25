@@ -1,0 +1,1 @@
+$(document).ready(function(){function c(){$("#header").toggleClass("header-active")}$("#search-icon").css("cursor","pointer"),$("#search-icon").click(function(){c()})});

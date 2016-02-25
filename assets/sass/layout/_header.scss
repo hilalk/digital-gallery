@@ -6,6 +6,10 @@
 		padding-top: 3.125em;
 	}
 
+	.hidden-lg {
+		display: none;
+	}
+
 	.header-active {
 		background: _palette(main, bg) !important;
 		-webkit-transition:	 background 0.2s ease-in-out;
@@ -199,9 +203,18 @@
 	@include breakpoint(xsmall) {
 		#header {
 			min-width: 320px;
+
+			>.nav-wrapper {
+			   display: none;
+			}
 		}
 
-		// .nav-wrapper {
-		//    color: transparent !important;
-		// }
+		.hidden-lg {
+			display: block;
+		}
+
+		.hidden-xs {
+			display: none;
+		}
+
 	}
